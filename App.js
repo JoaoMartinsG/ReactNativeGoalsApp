@@ -9,18 +9,17 @@ export default function App() {
   const [modalIsVisible, setModalIsVisible] = useState(false)
   const [userGoals, setUserGoals] = useState([
     { text: 'Learn React', id: Math.random().toString() },
-    { text: 'learn React Native', id: Math.random().toString() },
+    { text: 'learn Reat Native', id: Math.random().toString() },
   ])
 
-  startAddGoalhandler = () => {
+  function startAddGoalhandler() {
     setModalIsVisible(true)
   }
-  ;[]
-  endAddGoalHandler = () => {
+  function endAddGoalHandler() {
     setModalIsVisible(false)
   }
 
-  addGoalHandler = (enteredGoalText) => {
+  function addGoalHandler(enteredGoalText) {
     setUserGoals((currentUserGoals) => [
       ...currentUserGoals,
       { text: enteredGoalText, id: Math.random().toString() },
@@ -28,7 +27,7 @@ export default function App() {
     endAddGoalHandler()
   }
 
-  deleteGoalhandler = (id) => {
+  function deleteGoalhandler(id) {
     setUserGoals((currentUserGoals) => {
       return currentUserGoals.filter((goal) => goal.id !== id)
     })
